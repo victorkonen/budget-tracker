@@ -4,10 +4,13 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
-    entry: './app/app.js',
+    entry: {
+        app: './app/app.js',
+        vendor: ['angular']
+    },
     output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        filename: 'app.bundle.js',
+        path: path.resolve(__dirname, 'build')
     },
     module: {
         rules: [
@@ -30,8 +33,8 @@ const config = {
             filename: 'vendor.bundle.js'
         }),
         new HtmlWebpackPlugin({
-            filename: 'app.html',
-            template: 'app.html',
+            filename: 'index.html',
+            template: 'index.html',
             inject: 'head'
         })
     ],

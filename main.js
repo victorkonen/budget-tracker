@@ -13,7 +13,7 @@ app.on('ready', () => {
     let url = require('url').format({
         protocol: 'file',
         slashes: true,
-        pathname: require('path').join(__dirname, 'app.html')
+        pathname: require('path').join(__dirname, 'build/index.html')
     });
     console.log(url);
     mainWindow.loadURL(url);

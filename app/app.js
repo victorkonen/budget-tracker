@@ -1,8 +1,5 @@
 const angular = require('angular');
 
-const app = angular.module('myApp', []);
+angular.module('budgetTracker', []);
 
-app.controller('myCtrl', function($scope) {
-    $scope.firstName = "John";
-    $scope.lastName = "Doe";
-});
+require('./controllers/controllers.js');
